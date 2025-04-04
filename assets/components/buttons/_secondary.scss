@@ -1,0 +1,9 @@
+@use"../../abstracts/colors" as*;
+
+.btn-secondary{
+    background-color:$color-secondary;
+    color:$color-white;
+    border-radius: 0.5rem;
+    width: 50%;
+    height: 2.3rem;
+}

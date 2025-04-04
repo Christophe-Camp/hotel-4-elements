@@ -1,0 +1,178 @@
+.page-hotel {
+    padding-top: 8.8rem;
+}
+
+.pres-offre h3  {
+    margin-left: 16.3rem;
+}
+.container-offres {
+    display: flex;
+    justify-content: space-between; /* Équilibre l'espace entre les colonnes */
+    align-items: stretch; /* Aligne les colonnes en hauteur */
+    gap: 2rem; /* Ajoute un espace entre les colonnes */
+    margin: 0 auto; /* Centre le container */
+    max-width: 1200px; /* Pour éviter qu'il soit trop large */
+}
+
+/* Chaque colonne prend le même espace */
+.col {
+    flex: 1; /* Permet aux colonnes de prendre la même largeur */
+    display: flex;
+    flex-direction: column;
+    //align-items: center; /* Centre les éléments */
+    padding: 2rem;
+}
+
+/* Ajustement des images */
+.primary-img {
+    width: 100%;
+    height: 432px;
+    object-fit: cover; /* Garde un bon cadrage */
+}
+
+/* Services en mode grille pour une bonne lisibilité */
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
+    gap: 3rem; /* Espacement entre les éléments */
+    margin-top: 1rem;
+    align-items: center; /* Alignement vertical */
+    justify-content: center; /* Alignement horizontal */
+    .icon-service {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem; /* Espacement entre l'icône et le texte */
+    }
+        img {
+            width: 24px; /* Ajuste la taille des icônes */
+            height: 24px;
+    }
+}
+
+.btn-primary {
+    margin-top: 1rem;
+}
+
+.service-sup h3,.service-sup p  {
+    margin-left: 16.3rem;
+}
+
+
+/*.carousle-inner {
+    display: flex;
+    gap: 65px;
+}*/
+/*.slide img {
+    width: 488px;
+    height: 350px;
+    padding: 2rem;
+}
+*/
+/* Conteneur du carrousel */
+.carousel-container {
+    width: calc(2.5 * 488px + 2 * 65px);  /* 2.5 images + marges entre images */
+    overflow: hidden;  /* Cache les images qui dépassent */
+    position: relative;
+    margin-left: 16.3rem;  /* Décalage à gauche */
+}
+
+/* Style du carrousel lui-même */
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;  /* Transition fluide lors du déplacement */
+    width: 100%;  /* Utilise toute la largeur disponible dans le conteneur */
+}
+
+/* Track qui contient toutes les images */
+.carousel-track {
+    display: flex;
+    gap: 65px;  /* Espacement de 65px entre les images */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Chaque slide (image) */
+.carousel-slide {
+    flex-shrink: 0;
+    width: 488px;  /* Largeur fixe pour chaque image */
+    height: 350px; /* Hauteur fixe pour chaque image */
+}
+
+/* Style des images */
+.carousel-slide img {
+    width: 100%;  /* L'image prend toute la largeur de son conteneur */
+    height: 100%; /* L'image prend toute la hauteur de son conteneur */
+    object-fit: cover;  /* Ajuste l'image sans la déformer */
+}
+
+/* Style des boutons */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(252, 249, 249, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.prev {
+    left: 0; /* Positionne le bouton précédent sur la gauche */
+}
+
+.next {
+    right: 0; /* Positionne le bouton suivant sur la droite */
+}
+
+
+.hotel-video {
+    position: relative;
+    width: 100%;
+    height: 100vh; // Pleine hauteur
+    overflow: hidden; // Cache le débordement
+    margin-top: 6.8rem;
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // Remplit l'écran sans déformation
+    }
+}
+.testimonial {
+    margin: 6.8rem 16.3rem  ;
+}
+
+.testimonial-cards {
+    display: flex; /* Utilisation de flexbox */
+    justify-content: space-between; /* Espace entre les cartes */
+    gap: 20px; /* Espace entre les cartes */
+}
+
+.card {
+    width: 48%; /* Chaque carte prendra environ la moitié de l'espace */
+    padding: 20px;
+}
+.card-sup {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+.info {
+    margin-left: 16.3rem;
+}
+.col-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+.horaire {
+    display: flex;
+}
+.depart {
+    padding: 0 1rem;
+}
+.arrivee{
+    padding: 0 1rem;
+}

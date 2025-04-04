@@ -1,0 +1,22 @@
+@use"../abstracts/colors" as*; // Importer les variables
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh; // Pleine hauteur
+    overflow: hidden; // Cache le débordement
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // Remplit l'écran sans déformation
+    }
+
+    .titre-banner {
+        position: absolute;
+        top: 50%;
+        left: 39%;
+        text-align: end;
+        margin-right: 4rem;
+    }
+}

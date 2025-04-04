@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="assets/images/logo/favicon-elements-blanc.png">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Hotel 4 elements</title>
+</head>
+<body>
+    <header>
+        
+    </header>
+    <main>
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h4>Réserver votre séjour</h4>
+             <form id="formulaire">
+                <input type="text" id="nomcomplet" placeholder="Nom Prenom">
+                <span id="erreurNom" class="erreur"></span>
+                <div>
+                    <input type="text" id="numeroRue" placeholder="N°rue">
+                    <span id="erreurNumero" class="erreur"></span>
+                    <input type="text" id="rue" placeholder="Rue">
+                    <span id="erreurRue" class="erreur"></span>
+                </div>
+                <div>  
+                    <input type="text" id="codePostal" placeholder="Code postal">
+                    <span id="erreurPostal" class="erreur"></span>
+                    <input type="text" id="ville" placeholder="Ville">
+                    <span id="erreurVille" class="erreur"></span>
+                </div>
+                <input type="text" id="email" placeholder="email">
+                <span id="erreurEmail" class="erreur"></span>
+
+                <input type="text" id="telephone" placeholder="Numero de telephone">
+                <span id="erreurTel" class="erreur"></span>
+
+                <div>
+                    <input type="text" id="nbPersonnes" placeholder="Nombre de personnes">
+                    <span id="erreurNombre" class="erreur"></span>
+                </div>
+
+                <select id="selectHotel" class="select-hotel">
+                    <option value="">Choisir un hotel</option>
+                    <option value="air">Hotel Air</option>
+                    <option value="eau">Hotel Eau</option>
+                    <option value="feu">Hotel Feu</option>
+                    <option value="terre">Hotel Terre</option>
+                </select>
+                <span id="erreurHotel" class="erreur"></span>
+
+                <select id="chambreFeu" class="select-chambre">
+                    <option value="">Choisir la type de chambre</option>
+                    <option value="igloos">Igloos</option>
+                    <option value="laponne">Laponne</option>
+                </select>
+                <span id="erreurChambre" class="erreur"></span>
+
+                <div>
+                <label>Date d'arrivée :</label>
+                <input type="date" id="dateArrivee">
+                <span id="erreurArrivee" class="erreur"></span>
+
+                <label>Date de départ :</label>
+                <input type="date" id="dateDepart" >
+                <span id="erreurDepart" class="erreur"></span>
+                </div>
+                
+                <div class="checkbox-container">
+                    <label for="chauffeur">Chauffeur</label>
+                    <input type="checkbox" id="chauffeur">
+                </div>
+                <div class="checkbox-container">
+                    <label for="guide">Guide</label>
+                    <input type="checkbox" id="guide">
+                </div>
+                
+                <div class="checkbox-container">
+                    <label for="petitDejeuner">petit-déjeuner</label>
+                    <input type="checkbox" id="petitDejeuner">
+                </div>
+                <div class="checkbox-container">
+                    <label for="repas">repas</label>
+                    <input type="checkbox" id="repas">
+                </div>
+                <div>
+                <select id="sectionRepas">
+                    <option value="">Choisir un repas</option>
+                    <option value="midi">Midi</option>
+                    <option value="soir">Soir</option>
+                    <option value="ponctuel">Ponctuel</option>
+                </select>
+                <span id="erreurRepas" class="erreur"></span>
+                
+                <select id="sectionRegime">
+                    <option value="">Choisir un régime alimentaire</option>
+                    <option value="vegan">Végan</option>
+                    <option value="vegetarien">Végétarien</option>
+                    <option value="non">Non</option>
+                </select>
+                <span id="erreurRegime" class="erreur"></span>
+
+                <select id="sectionRestriction">
+                    <option value="">Choisir une restriction alimentaires</option>
+                    <option value="gluten">Sans gluten</option>
+                    <option value="lactoses">Sans lactoses</option>
+                    <option value="autres">Autres allergies et intolérances</option>
+                    <option value="Aucun">Aucun</option>
+                </select>
+                <span id="erreurRestriction" class="erreur"></span>
+                </div>
+                <button type="submit">Valider</button>
+                <button id="reset" type="reset">Reset</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        
+    </footer>
+    <script src="../assets/javascript/script.js"></script>  
+</body>
+</html>

@@ -1,0 +1,58 @@
+@use"../abstracts/typography" as *;
+@use"../abstracts/colors" as*;
+
+header a {
+    font-size: 20px;
+    font-family: $font-karla-med;
+    color: $color-primary;
+}
+h1 {
+    font-family: $font-play-med;
+    color: $color-tertiary;
+    font-size: 100px;
+}
+
+//chercher un hotel
+
+h4 {
+    font-family: $font-play-med;
+    font-size: 30px;
+}
+.btn-primary {
+    font-family: $font-karla-reg;
+    font-size: 30px;
+}
+
+.form-chercher {
+    font-family: $font-karla-reg;
+    font-size: 17px;
+}
+
+h2{
+    font-family: $font-play-med;
+    font-size: 96px;
+    color: $color-primary;
+}
+
+p{
+    font-family: $font-karla-reg;
+    color: $color-primary;
+    font-size: 20px;
+}
+
+//presentation concept
+
+h3{
+    font-family: $font-play-bold;
+    font-size: 48px;
+    color: $color-primary;
+}
+
+span {
+    font-weight: bold;
+}
+
+h5{
+    font-family: $font-karla-bold;
+    font-size: 20px;
+}

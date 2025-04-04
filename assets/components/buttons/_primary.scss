@@ -1,0 +1,11 @@
+@use"../../abstracts/colors" as*;
+
+
+.btn-primary {
+    width: 180px;
+    height: 48px;
+    color: $color-white;
+    background-color: $color-primary;
+    border: none;
+    border-radius: 0.5rem;
+}

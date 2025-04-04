@@ -1,0 +1,71 @@
+@use"../abstracts/colors" as*;
+
+header img {
+    width: 70%;
+    height: 3.3rem;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    gap: 2.1rem;
+}
+
+.menu-desktop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: $bacgroud-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4.5rem;
+}
+
+header .logo-header{
+    margin-left: 3.5rem;
+}
+
+.nav-left{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-right {
+    display: flex;
+    justify-content: space-around;
+    width: 40%;
+}
+
+.reseaux {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.reseaux img {
+    height: 1.4rem;
+}
+
+.user-connecte {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    width: 41%;
+}
+
+.menu-mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-desktop {
+        display: none;
+    }
+    .menu-mobile {
+        display: block;
+    }
+}

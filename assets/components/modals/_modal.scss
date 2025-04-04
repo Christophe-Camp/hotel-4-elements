@@ -1,0 +1,108 @@
+@use"../../abstracts/colors" as*;
+/* Style de la modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenu de la modal */
+.modal-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    position: relative;
+}
+
+/* Bouton de fermeture */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Champs du formulaire */
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Bouton de soumission */
+.btn-submit {
+    //background-color: #007BFF;
+    //color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#numeroRue {
+    width: 15%;
+}
+
+#rue {
+    width: 83%;
+}
+#codePostal {
+    width: 30%;
+}
+#ville{
+    width: 68%;
+}
+#dateDepart{
+    width: 232px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid ;
+    background-color:$color-input;
+}
+
+#chambreAir{
+    display: none;
+}
+#chambreEau{
+    display: none;
+}
+#chambreFeu{
+    display: none;
+}
+#chambreTerre{
+    display: none;
+}
+
+.modal-resultat {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-resumer {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    text-align: center;
+    position: relative;
+}
