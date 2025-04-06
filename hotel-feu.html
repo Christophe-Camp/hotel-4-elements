@@ -11,11 +11,18 @@
         <div class="container">
             <div class="row">
                 <div class="menu-mobile">
-                    <img src="assets/images/images/icon/list.svg" alt="menu deroulant version mobile">
+                    <div class="align-icon">
+                        <img id="menu-icon" src="assets/images/images/icon/list.svg" alt="menu deroulant version mobile">
+                        <div class="reseaux">
+                            <a href="https://www.instagram.com/" title="Venez nous suivre sur instagram" target="_blank"><img src="assets/images/images/icon/instagram.svg" alt="Logo instagram"></a>
+                            <a href="https://www.facebook.com/" title="Venez nous suivre sur facebook" target="_blank"><img src="assets/images/images/icon/facebook.svg" alt="Logo facebook"></a>
+                        </div> 
+                    </div>
                     <div class="burger">
                         <nav>
                             <ul>
-                                <li><a href="hotel-feu.html" title="Venez réserver votre séjour sur l'hôtel Feu">Feu</a></li><!--mettre le lien-->
+                                <li><a href="index.html" title="Venez réserver votre séjour sur l'hôtel Feu">Accueil</a></li>
+                                <li><a href="hotel-feu.html" title="Venez réserver votre séjour sur l'hôtel Feu">Feu</a></li>
                                 <li><a href="#" title="Venez réserver votre séjour sur l'hôtel Air">Air</a></li>
                                 <li><a href="#" title="Venez réserver votre séjour sur l'hôtel Terre">Terre</a></li>
                                 <li><a href="#" title="Venez réserver votre séjour sur l'hôtel Eau">Eau</a></li>
@@ -42,7 +49,7 @@
                             <a href="https://www.facebook.com/" title="Venez nous suivre sur facebook"></a><img src="assets/images/images/icon/facebook.svg" alt="Logo facebook">
                         </div>
                         <div class="user-connecte">
-                            <button class="btn-secondary">reserver</button>
+                            <button class="btn-secondary btn-reserver">reserver</button>
                             <a href="#" title="accédez à votre compte en vous connectant">Se connecter</a>
                         </div>
                     </div>
@@ -71,7 +78,7 @@
                                 </div>
                             </div>
                             <p>L'hôtel Feu ne se situe bien sûr pas sur un volcan, mais en Finlande. Feu de la terre volcanique crachant non loin de là ses geysers, feu des volcans à l'horizon et, bien entendu, feu des aurores boréales que vous pourrez admirer tous les soirs par le toit vitré de votre chambre.</p>
-                            <button class="btn-primary">Reserver</button>
+                            <button class="btn-primary btn-reserver">Reserver</button>
                         </div>
                         <div class="img-feu">
                             <img class="img-active" src="assets/images/images/hotel-feu-vue-igloos.jpg" alt="Vue aérienne des igloos">
@@ -85,9 +92,9 @@
             <div class="container">
                 <div class="row">
                     <aside>
-                        <h3>Les Offres de l'hôtel feu</h3>
+                        <h3 class="title-offre">Les Offres de l'hôtel feu</h3>
                         <div class="container-offres">
-                            <div class="col">
+                            <div class="col-offre">
                                 <img class="primary-img" src="assets/images/images/igloos-neige-nature.jpg" alt="panorama sur les igloos et la nature">
                                 <h4>Découvrez nos igloos et voyagez le temps d’une nuit</h4>
                                 <p>Plongez-vous dans une nuit magique où le temps semble suspendu. Nos igloos offrent une atmosphère chaleureuse et dépaysante, vous invitant à vivre une aventure hors du commun. Chaque détail a été soigneusement pensé pour créer une escapade mémorable. Profitez de l'intimité et du confort de nos hébergements glacés tout en vous laissant imprégner par la beauté éphémère de cet environnement. Offrez-vous une nuit inoubliable dans nos igloos, une expérience qui restera gravée dans vos souvenirs.</p>
@@ -120,10 +127,10 @@
                                 </div>
                                 <div class="prix">
                                     <p>à partir de <span>500€ / nuit</span></p>
-                                    <button class="btn-primary">Reserver</button>
+                                    <button class="btn-primary btn-reserver">Reserver</button>
                                 </div>
                             </div>
-                            <div class="col">
+                            <div class="col-offre">
                                 <img class="primary-img" src="assets/images/images/suite-laponie.jpg" alt="Image de l'intérieur de la suite en Laponie">
                                 <h4>Découvrez la suite Laponie et voyagez le temps d’une nuit</h4>
                                 <p>Voyagez le temps d'une nuit à travers un hébergement exceptionnel qui évoque la magie et l'authenticité de la Laponie. La suite offre un mélange enchanteur de confort luxueux et d'éléments inspirés de la nature environnante. Imprégnez-vous de l'atmosphère enchanteresse de la Laponie tout en profitant du luxe et de l'intimité de notre suite. Offrez-vous une nuit extraordinaire dans la suite Laponie de l'hôtel Feu, où chaque moment promet d'être magique et mémorable.</p>
@@ -156,7 +163,7 @@
                                 </div>
                                 <div class="prix">
                                     <p>à partir de <span>850€ / nuit</span></p>
-                                    <button class="btn-primary">Reserver</button>
+                                    <button class="btn-primary btn-reserver">Reserver</button>
                                 </div>
                             </div>
                         </div>
@@ -188,11 +195,11 @@
                 </video>
             </container>
         </section>
-        <section class="testimonial">
+        <section id="avis-clients" class="testimonial">
             <div class="container">
                 <div class="row">
                     <h4>Avis client</h4>
-                    <div class="testimonial-cards"> <!-- Nouveau conteneur pour les cartes -->
+                    <div  class="testimonial-cards"> <!-- Nouveau conteneur pour les cartes -->
                         <div class="card">
                             <div class="card-sup">
                                 <img src="assets/images/images/avy-johnson.png" alt="portrait de avy jhonson">
@@ -221,10 +228,10 @@
             <div class="container">
                 <div class="row">
                     <h3>Informations générales</h3>
-                    <div class="col-info">
-                        <div class="col">
-                            <img src="assets/images/images/icon/key.sv" alt="">
-                            <div class="horaire">
+                    <div class="info-general">
+                        <div class="col-info">
+                            <div class="icon-info">
+                                <img src="assets/images/images/icon/key.svg" alt="cle pour les horaire">
                                 <div class="arrivee">
                                     <h5>Arrivée</h5>
                                     <p>De 15h00 à 0h00</p>
@@ -234,31 +241,51 @@
                                     <p>Jusqu’à 12h00</p>
                                 </div>
                             </div>
-                            <img src="" alt="">
-                            <h5>Annulation/prépaiement</h5>
-                            <p>Les conditions d'annulation et de prépaiement varient en fonction du type d'hébergement.Veuillez saisir les dates de votre séjour et consulter les conditions de la chambre choisie.</p>
-                            <img src="" alt="">
-                            <h5>Restriction relative à l'âge</h5>
-                            <p>Les clients doivent avoir au moins 18 ans pour pouvoir s'enregistrer.</p>
+                            <div class="icon-info">
+                                <img src="assets/images/images/icon/credit-card.svg" alt="">
+                                <div>
+                                    <h5>Annulation/prépaiement</h5>
+                                    <p>Les conditions d'annulation et de prépaiement varient en fonction du type d'hébergement.Veuillez saisir les dates de votre séjour et consulter les conditions de la chambre choisie.</p>
+                                </div>
+                            </div>
+                            <div class="icon-info">
+                                <img src="assets/images/images/icon/user.svg" alt="">
+                                <div>
+                                    <h5>Restriction relative à l'âge</h5>
+                                    <p>Les clients doivent avoir au moins 18 ans pour pouvoir s'enregistrer.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col">
-                            <img src="" alt="">
-                            <h5>Accessibilité</h5>
-                            <p>L’établissement est accessible aux personnes à mobilité réduite (PMR)</p>
-                            <img src="" alt="">
-                            <h5>Animaux de compagnie</h5>
-                            <p>Les animaux de compagnie ne sont pas admis au sein de l'établissement.</p>
-                            <img src="" alt="">
-                            <h5>Moyens de paiement acceptés</h5>
-                            <p>Paiement par carte bancaire (VISA, MasterCard,American Express..)Les espèces ne sont pas acceptées.</p>
+                        <div class="col-info">
+                            <div class="icon-info">
+                                <img src="assets/images/images/icon/wheelchair.svg" alt="">
+                                <div>
+                                    <h5>Accessibilité</h5>
+                                    <p>L’établissement est accessible aux personnes à mobilité réduite (PMR)</p>
+                                </div>
+                            </div>
+                            <div class="icon-info">
+                                <img src="assets/images/images/icon/paw-print.svg" alt="">
+                                <div>
+                                    <h5>Animaux de compagnie</h5>
+                                    <p>Les animaux de compagnie ne sont pas admis au sein de l'établissement.</p>
+                                </div>
+                            </div>
+                            <div class="icon-info">
+                                <img src="assets/images/images/icon/credit-card.svg" alt="">
+                                <div>
+                                    <h5>Moyens de paiement acceptés</h5>
+                                    <p>Paiement par carte bancaire (VISA, MasterCard,American Express..)Les espèces ne sont pas acceptées.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="info-contact">
                     <h4>Contact</h4>
-                    <p>Adresse : 8 avenue exemple
-                        Ouverture : Tous les jours de 9h à 20h30
-                        Tél : 33 08 280 28002</p>
+                    <p>Adresse : 8 avenue exemple</p>
+                    <p>Ouverture : Tous les jours de 9h à 20h30</p>
+                    <p>Tél : 33 08 280 28002</p>
                 </div>
             </div>
         </section>
@@ -277,7 +304,7 @@
                     <p><span>Adresse :</span> 8 avenue exemple</p>
                     <p><span> Ouverture :</span> Tous les jours de 9h à 20h30</p>  
                     <p><span>Tél :</span> 33 08 280 28002</p>  
-                    <button class="btn-secondary">Reserver en ligne</button>
+                    <button class="btn-secondary btn-reserver">Reserver en ligne</button>
                 </div>
                 <div class="col-footer">
                     <p>Mentions légales</p>

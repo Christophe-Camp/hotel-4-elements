@@ -1,7 +1,6 @@
 @use"../abstracts/colors" as*;
 
 header img {
-    width: 70%;
     height: 3.3rem;
 }
 
@@ -58,7 +57,39 @@ header .logo-header{
 }
 
 .menu-mobile {
+    width: 100%;
     display: none;
+    position: fixed;
+    top: 58px;
+    left: 57px;
+    z-index: 101;
+}
+
+.burger{
+    display: none;
+    width: 13%;
+    &:hover {
+        background-color: rgba(229, 224, 220, 0.5);
+    }
+}
+
+.menu-mobile .burger {
+    display: none;
+    ul{
+        display: flex;
+        flex-direction: column;
+        margin-left: 1rem;
+    }
+
+}
+.menu-mobile.open .burger {
+        display: block;
+}
+
+.align-icon{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
 }
 
 @media (max-width: 768px) {

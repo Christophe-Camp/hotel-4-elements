@@ -12,11 +12,18 @@
         <div class="container">
             <div class="row">
                 <div class="menu-mobile">
-                    <img src="assets/images/images/icon/list.svg" alt="menu deroulant version mobile">
+                    <div class="align-icon">
+                        <img id="menu-icon" src="assets/images/images/icon/list.svg" alt="menu deroulant version mobile">
+                        <div class="reseaux">
+                            <a href="https://www.instagram.com/" title="Venez nous suivre sur instagram" target="_blank"><img src="assets/images/images/icon/instagram.svg" alt="Logo instagram"></a>
+                            <a href="https://www.facebook.com/" title="Venez nous suivre sur facebook" target="_blank"><img src="assets/images/images/icon/facebook.svg" alt="Logo facebook"></a>
+                        </div> 
+                    </div>
                     <div class="burger">
                         <nav>
                             <ul>
-                                <li><a href="hotel-feu.html" title="Venez réserver votre séjour sur l'hôtel Feu">Feu</a></li><!--mettre le lien-->
+                                <li><a href="index.html" title="Venez réserver votre séjour sur l'hôtel Feu">Accueil</a></li>
+                                <li><a href="hotel-feu.html" title="Venez réserver votre séjour sur l'hôtel Feu">Feu</a></li>
                                 <li><a href="#" title="Venez réserver votre séjour sur l'hôtel Air">Air</a></li>
                                 <li><a href="#" title="Venez réserver votre séjour sur l'hôtel Terre">Terre</a></li>
                                 <li><a href="#" title="Venez réserver votre séjour sur l'hôtel Eau">Eau</a></li>
@@ -39,8 +46,8 @@
                     <div class="nav-right">
                         <div class="reseaux">
                             <a href="#contact-footer" title="Voir l'adresse, les heures d'ouverture et le téléphone">Contact</a>
-                            <a href="https://www.instagram.com/" title="Venez nous suivre sur instagram"></a><img src="assets/images/images/icon/instagram.svg" alt="Logo instagram">
-                            <a href="https://www.facebook.com/" title="Venez nous suivre sur facebook"></a><img src="assets/images/images/icon/facebook.svg" alt="Logo facebook">
+                            <a href="https://www.instagram.com/" title="Venez nous suivre sur instagram" target="_blank"><img src="assets/images/images/icon/instagram.svg" alt="Logo instagram"></a>
+                            <a href="https://www.facebook.com/" title="Venez nous suivre sur facebook" target="_blank"><img src="assets/images/images/icon/facebook.svg" alt="Logo facebook"></a>
                         </div>
                         <div class="user-connecte">
                             <button class="btn-secondary btn-reserver">reserver</button>
@@ -69,28 +76,31 @@
                         <h4>Rechercher une disponibilité</h4>
                         <form id="form-chercher">
                             <div class="select-hotel">
-                              <p>Choisir un hotel</p>
-                                <select id="selectLogement" class="select-logement">
+                              <p>Choisir un hôtel</p>
+                                <select id="selectionHotel" class="selection-hotel">
                                     <option value="hotel-air">Hôtle Air</option>
                                     <option value="hotel-eau">Hôtle Eau</option>
                                     <option value="hotel-feu">Hôtle Feu</option>
                                     <option value="hotel-terre">Hôtle Terre</option>
-                                </select>  
+                                </select>
+                                <span id="erreurSelHotel" class="erreur"></span>  
                             </div>
                             <div class="select-nbr">
                                 <p>Nbr de personnes</p>
-                                <input type="text" id="nbPersonn" placeholder="2">
-                                <span id="erreurNombre" class="erreur"></span>  
+                                <input type="text" id="nombrePers" placeholder="2">
+                                <span id="erreurNoPers" class="erreur"></span>  
                             </div>
                             <div class="select-date">
-                                <p>Date d'arrivée :</p>
-                                <input type="date" id="dateArri">
-                                <span id="erreurArrivee" class="erreur"></span> 
+                                <p>Choisir une date d'arrivée :</p>
+                                <input type="date" id="arriveeDate">
+                                <span id="erreurDateArri" class="erreur"></span> 
                             </div>
                             <div class="cta">
                                 <button class="btn-primary btn-reserver" type="submit">Chercher</button>
                             </div>
                         </form>
+                        <div id="erreur"></div>
+                        <div id="resultat"></div>
                     </div>
                     <div class="hotel-feu">
                         <div class="presentation">
@@ -133,7 +143,7 @@
                                 </a>
                             </div>
                             <p>L'hôtel Air se situe à la frontière du Brésil et du Pérou. C'est un concept architectural innovant qui a permis une implantation à la cîme de la forêt pour offrir un panorama vertigineux et cotoyerchaque matin, de votre chambre (avec ou sans piscine), les oiseaux à votre réveil.</p>
-                            <button class="btn-primary">Reserver</button>
+                            <button class="btn-primary btn-reserver">Reserver</button>
                         </div>
                     </div>
                     <div class="hotel-terre">
@@ -151,7 +161,7 @@
                                 </a>
                             </div>
                             <p>L'hôtel Terre est situé dans des grottes naturelles en Thaïlande. Retaillées et aménagées avec beaucoup de soin, les chambres de l'hôtel vous offriront soit la fraîcheur et l'apaisement à près de vingt mètres de profondeur, soit un hâvre de paix ouvrant sur l'horizon de la mer au loin.</p>
-                                <button class="btn-primary">Reserver</button>
+                                <button class="btn-primary btn-reserver">Reserver</button>
                         </div>
                         <div class="img-terre">
                             <img class="img-active" src="assets/images/images/hotel-terre-chambre-double-luxe.jpg" alt="Aperçu d'une chambre double de luxe à l'intérieur">
@@ -177,7 +187,7 @@
                                 </a>
                             </div>
                             <p>L'hôtel Eau est situé sur une île de 2 kilomètres carrés très exactement équidistante de Vladivostok et de Los Angeles. C'est le milieu duPacifique. Vous y disposerez de votre plage, de votre bateau et de votre majordome privés. Votre chambre est un caisson immergé à deux mètres sous l'eau.</p>
-                            <button class="btn-primary">Reserver</button>
+                            <button class="btn-primary btn-reserver">Reserver</button>
                         </div>
                     </div>
                 </div>
@@ -193,7 +203,7 @@
                                 <img src="assets/images/images/vue-chambre-nature.jpg" alt="vue de la chambre avec une terrasse">
                                 <p>Depuis l'ouverture de ses 4 hôtels en 2012, 4 Éléments s'est démarqué en proposant des établissements exceptionnels dans des lieux uniques, symbolisant les quatre éléments : terre, eau, air et feu. Ces hôtels insolites, construits dans des endroits inattendus à travers la planète, incarnent notre volonté de révolutionner le tourisme en intégrant luxe, aventure et vision à long terme. Chacun de nos établissements offre un environnement et un service uniques, alliant la rigueur de l'hôtellerie de luxe à une proximité quotidienne avec les habitants. Explorez les environs avec des guides experts tels que des ethnologues, astrophysiciens, géologues et climatologues. Ce que nous vous proposons n'est pas un simple "tour", mais une véritable révolution.</p>
                             </div>
-                            <div class="col">
+                            <div class="col archi">
                                 <h3>L’architecture</h3>
                                 <p>L'architecture innovante constitue une étape supplémentaire vers l'exploration de l'Espace, représentant l'extension de notre civilisation vers ses aspects les plus avancés. S'immerger dans l'un de nos hôtels, c'est embrasser une expérience sensorielle où l'on peut se ressourcer au contact des matières représentatives des quatre éléments. C'est une opportunité de se découvrir en harmonie avec la terre, l'air, l'eau et le feu. Notre approche unique vise à transcender les frontières traditionnelles du voyage en offrant une expérience qui éveille les sens et connecte les visiteurs à la quintessence de chaque élément. En plongeant dans nos établissements, les clients sont invités à explorer l'intersection fascinante entre l'innovation architecturale etla nature environnante.</p>
                                 <img src="assets/images/images/hotel-architecture-jardin.jpg" alt="Vue de l'agencement de l'hôtel avec un jardin">
@@ -209,17 +219,21 @@
                 <div class="row">
                     <article>
                             <div class="content-propos">
-                                <h3>Le mot du créateur</h3>
-                                <img class="guillemets" src="assets/images/images/icon/guillemets.png" alt="guillemets">
-                                <p>L'architecture innovante représente une avancée vers l'exploration de l'Espace, symbolisant l'extension de notre civilisation vers ses plus grandes aspirations. S'immerger dans nos hôtels, c'est vivre une expérience sensorielle, se ressourcer au contact des matières des quatre éléments. C'est une découverte en harmonie avec la terre, l'air, l'eau et le feu, où chaque détail architectural offre une connexion profonde avec ces éléments fondamentaux. Les témoignages de nos visiteurs soulignent l'impact transformateur de cette expérience immersive, décrivant une reconnexion unique avec la nature et une redécouverte de soi au sein de cet environnement exceptionnel. Cette approche révolutionnaire redéfinit les attentes du voyage, offrant non seulement un hébergement luxueux, mais une véritable aventure sensorielle qui transcende les limites conventionnelles du tourisme.</p>
-                                <div>
-                                    <p><span>Trinh Xuan Thuan</span></p>   
-                                    <p>Co-fondateur de 4 Eléments</p>
+                                <div class="col-propos">
+                                    <h3 class="titre-propos">Le mot du créateur</h3>
+                                    <img class="img-mobile" src="assets/images/images/trinh-xuan-thuan-co-fondateur.jpg" alt="photo du cofondateur des hôtels Quatre Éléments"><!-- Image du fondateur POUR MOBILE -->
+                                    <img class="guillemets" src="assets/images/images/icon/guillemets.png" alt="guillemets">
+                                    <p class="texte-propos">L'architecture innovante représente une avancée vers l'exploration de l'Espace, symbolisant l'extension de notre civilisation vers ses plus grandes aspirations. S'immerger dans nos hôtels, c'est vivre une expérience sensorielle, se ressourcer au contact des matières des quatre éléments. C'est une découverte en harmonie avec la terre, l'air, l'eau et le feu, où chaque détail architectural offre une connexion profonde avec ces éléments fondamentaux. Les témoignages de nos visiteurs soulignent l'impact transformateur de cette expérience immersive, décrivant une reconnexion unique avec la nature et une redécouverte de soi au sein de cet environnement exceptionnel. Cette approche révolutionnaire redéfinit les attentes du voyage, offrant non seulement un hébergement luxueux, mais une véritable aventure sensorielle qui transcende les limites conventionnelles du tourisme.</p>
+                                    <div>
+                                        <p class="signature"><span>Trinh Xuan Thuan</span></p>   
+                                        <p>Co-fondateur de 4 Eléments</p>
+                                    </div>
+                                </div>
+                                <div class="img-propos">
+                                    <img src="assets/images/images/trinh-xuan-thuan-co-fondateur.jpg" alt="photo du cofondateur des hôtels Quatre Éléments">
                                 </div>
                             </div>
-                            <div class="img-propos">
-                                <img src="assets/images/images/trinh-xuan-thuan-co-fondateur.jpg" alt="photo du cofondateur des hôtels Quatre Éléments">
-                            </div>
+                            
                     </article>
                 </div>
             </div>

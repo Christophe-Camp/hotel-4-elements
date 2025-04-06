@@ -1,3 +1,34 @@
+//----------------------------------------------------
+// centre la section avis 
+//----------------------------------------------------
+window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash;
+
+    if (hash) {
+      const target = document.querySelector(hash);
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300); // petit délai pour laisser le contenu se charger
+      }
+    }
+  });
+
+//-------------------------------------------------------------
+//menu burgeur
+//-------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", function() {
+    const menuIcon = document.getElementById("menu-icon");
+    const menu = document.querySelector(".menu-mobile");
+
+    // Ajouter un événement de clic sur l'icône du menu
+    menuIcon.addEventListener("click", function() {
+        menu.classList.toggle("open"); // Ajoute ou enlève la classe "open" qui affiche le menu
+    });
+});
+//-----------------------------------------------------------
+//carousel hotel-feu
+//-----------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM chargé !");
 
@@ -71,17 +102,16 @@ document.addEventListener("DOMContentLoaded", function () {
         "assets/images/images/speleologie.png"
     ]);
 });
-
-
-
+//-----------------------------------------------------------
+//creation de la modal reserver
+//-----------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
 
-    // Fonction pour créer la modal
     function createModal() {
         let modal = document.createElement("div");
         modal.id = "modal-reservation";
         modal.classList.add("modal");
-        modal.style.display = "none"; // Cachée par défaut
+        modal.style.display = "none"; 
 
         modal.innerHTML = `
             <div class="modal-content">
@@ -92,16 +122,18 @@ document.addEventListener("DOMContentLoaded", function () {
                     <span id="erreurNom" class="erreur"></span>
                     <div>
                         <input type="text" id="numeroRue" placeholder="N°rue">
-                        <span id="erreurNumero" class="erreur"></span>
                         <input type="text" id="rue" placeholder="Rue">
-                        <span id="erreurRue" class="erreur"></span>
                     </div>
+                    <span id="erreurNumero" class="erreur"></span>
+                    <span id="erreurRue" class="erreur"></span>
+
                     <div>  
                         <input type="text" id="codePostal" placeholder="Code postal">
-                        <span id="erreurPostal" class="erreur"></span>
                         <input type="text" id="ville" placeholder="Ville">
-                        <span id="erreurVille" class="erreur"></span>
                     </div>
+                    <span id="erreurPostal" class="erreur"></span>
+                    <span id="erreurVille" class="erreur"></span>
+
                     <input type="text" id="email" placeholder="email">
                     <span id="erreurEmail" class="erreur"></span>
     
@@ -119,7 +151,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         <option value="eau">Hotel Eau</option>
                         <option value="feu">Hotel Feu</option>
                         <option value="terre">Hotel Terre</option>
-                    </select>
+                    </select><br>
                     <span id="erreurHotel" class="erreur"></span>
 
                     <select id="chambreAir" class="select-chambre">
@@ -145,31 +177,33 @@ document.addEventListener("DOMContentLoaded", function () {
                     <span id="erreurChambre" class="erreur"></span>
 
                     <div>
-                    <label>Date d'arrivée :</label>
-                    <input type="date" id="dateArrivee">
-                    <span id="erreurArrivee" class="erreur"></span>
+                        <label>Date d'arrivée :</label>
+                        <input type="date" id="dateArrivee">
     
-                    <label>Date de départ :</label>
-                    <input type="date" id="dateDepart" >
+                        <label>Date de départ :</label>
+                        <input type="date" id="dateDepart" >
+                    </div>
+                    <span id="erreurArrivee" class="erreur"></span>
                     <span id="erreurDepart" class="erreur"></span>
-                    </div>
-                    
-                    <div class="checkbox-container">
-                        <label for="chauffeur">Chauffeur</label>
-                        <input type="checkbox" id="chauffeur">
-                    </div>
-                    <div class="checkbox-container">
-                        <label for="guide">Guide</label>
-                        <input type="checkbox" id="guide">
-                    </div>
-                    
-                    <div class="checkbox-container">
-                        <label for="petitDejeuner">petit-déjeuner</label>
-                        <input type="checkbox" id="petitDejeuner">
-                    </div>
-                    <div class="checkbox-container">
-                        <label for="repas">repas</label>
-                        <input type="checkbox" id="repas">
+
+                    <div class="checkbox-wrapper">
+                        <div class="checkbox-container">
+                            <label for="chauffeur">Chauffeur</label>
+                            <input type="checkbox" id="chauffeur">
+                        </div>
+                        <div class="checkbox-container">
+                            <label for="guide">Guide</label>
+                            <input type="checkbox" id="guide">
+                        </div>
+                        
+                        <div class="checkbox-container">
+                            <label for="petitDejeuner">Petit-déjeuner</label>
+                            <input type="checkbox" id="petitDejeuner">
+                        </div>
+                        <div class="checkbox-container">
+                            <label for="repas">repas</label>
+                            <input type="checkbox" id="repas">
+                        </div>
                     </div>
                     <div>
                     <select id="sectionRepas">
@@ -203,49 +237,36 @@ document.addEventListener("DOMContentLoaded", function () {
                 
             </div>
         `;
-//<div id="erreur"></div>
-//<div id="resultat"></div>
 
-        document.body.appendChild(modal); // Ajoute la modal au body
-
-        console.log("Modal créée !");
-
+        document.body.appendChild(modal);         //Ajoute la modal au body
         return modal;
     }
 
-    let modal = createModal(); // Création de la modal
+    let modal = createModal();                   //Création de la modal
     let closeBtn = modal.querySelector(".close");
 
-    // Fonction pour afficher la modal
-    function openModal() {
-        console.log("Ouverture de la modal");
+    
+    function openModal() {                      //Fonction pour afficher la modal
         modal.style.display = "flex";
     }
 
-    // Fonction pour fermer la modal
-    function closeModal() {
-        console.log("Fermeture de la modal");
+    
+    function closeModal() {                     //Fonction pour fermer la modal
         modal.style.display = "none";
     }
 
-    // Fermer en cliquant sur "×"
-    closeBtn.addEventListener("click", closeModal);
+   
+    closeBtn.addEventListener("click", closeModal);     //Fermer en cliquant sur "×"
 
-    // Fermer en cliquant en dehors de la modal
-    window.addEventListener("click", function (event) {
+    
+    window.addEventListener("click", function (event) {     //Fermer en cliquant en dehors de la modal
         if (event.target === modal) {
             closeModal();
         }
     });
 
-    // Sélectionne tous les boutons "Réserver" et ajoute l'événement de clic
-    let reserveButtons = document.querySelectorAll(".btn-reserver");
-
-    /*if (reserveButtons.length === 0) {
-        //console.warn("Aucun bouton 'Réserver' trouvé !");
-    } else {
-        //console.log(`${reserveButtons.length} bouton(s) 'Réserver' trouvé(s)`);
-    }*/
+    
+    let reserveButtons = document.querySelectorAll(".btn-reserver");    //Sélectionne tous les boutons "Réserver" et ajoute l'événement de clic
 
     reserveButtons.forEach(button => {
         button.addEventListener("click", function (event) {
@@ -253,64 +274,47 @@ document.addEventListener("DOMContentLoaded", function () {
             openModal();
         });
     });
-
-    // Fonction pour créer la modal
+//----------------------------------------------------------
+//Fonction pour créer la modal resumer
+//----------------------------------------------------------
     function createModalResumer() {
         let modalResumer = document.createElement("div");
         modalResumer.id = "modalResultat";
         modalResumer.classList.add("modal-resultat");
-        modalResumer.style.display = "none"; // Cachée par défaut
+        modalResumer.style.display = "none";                    //Modal cachée par défaut
 
         modalResumer.innerHTML = `
             <div class="modal-resumer">
                 <span class="close">&times;</span>
-                <h4>Réserver votre séjour</h4>
+                <h4>Resumer reservation</h4>
                 <div id="erreur"></div>
                 <div id="resultat"></div>
             </div>
         `;
 
         document.body.appendChild(modalResumer); 
-
-        console.log("Modal créée !");
-
         return modalResumer;
     }
 
-    let modalResumer = createModalResumer(); // Création de la modal
+    let modalResumer = createModalResumer();                        //Création de la modal
     let closeBtnResumer = modalResumer.querySelector(".close");
 
-    // Fonction pour afficher la modal
     function openModalResumer() {
-        console.log("Ouverture de la modal");
         modalResumer.style.display = "flex";
     }
 
-    // Fonction pour fermer la modal
     function closeModalResumer() {
-        console.log("Fermeture de la modal");
         modalResumer.style.display = "none";
     }
 
-    // Fermer en cliquant sur "×"
     closeBtnResumer.addEventListener("click", closeModalResumer);
 
-    // Fermer en cliquant en dehors de la modal
     window.addEventListener("click", function (event) {
         if (event.target === modal) {
             closeModalResumer();
         }
     });
 
-    // Sélectionne tous les boutons "Réserver" et ajoute l'événement de clic
-    /*let submitButton = document.querySelectorAll("button[type='submit']");
-
-    submitButton.forEach(button => {
-        button.addEventListener("click", function (event) {
-            event.preventDefault();
-            openModalResumer();
-        });
-    });*/
 
 //---------------------------------------------------
 //  fonction pour choisir un logement avec des option
@@ -351,30 +355,58 @@ function hotel() {
     }
 }
 document.getElementById("selectHotel").addEventListener("change",hotel);
-
 //---------------------------------------------------
 //  fonction pour choisir un menu
 //---------------------------------------------------
 
-/*function regime(){
-    const sectionRegime = document.getElementById("sectionRegime");
+function repas(){
+    const sectionRepas = document.getElementById("sectionRepas");
     const petitDejeuner = document.getElementById("petitDejeuner").checked;
-    const dejeuner = document.getElementById("dejeuner").checked;
-    const dinner = document.getElementById("dinner").checked;
+    const repas = document.getElementById("repas").checked;
     
-    if (petitDejeuner || dejeuner || dinner ) {
-        sectionRegime.style.display ="block";
+    if (petitDejeuner || repas ) {
+        sectionRepas.style.display ="block";
     }else {
-        sectionRegime.style.display ="none";
+        sectionRepas.style.display ="none";
         document.getElementById("erreurMenu").textContent = "";
     }
 }
- document.getElementById("petitDejeuner").addEventListener("change",regime);
- document.getElementById("dejeuner").addEventListener("change",regime);
- document.getElementById("dinner").addEventListener("change",regime);
-*/
+ document.getElementById("petitDejeuner").addEventListener("change",repas);
+ document.getElementById("repas").addEventListener("change",repas);
+
+ function regime() {
+    const selectRegime= document.getElementById("sectionRegime");
+    const selectRepas = document.getElementById("sectionRepas");
+    
+    if(selectRepas.value === "midi") {
+        selectRegime.style.display = "block";
+    } else if(selectRepas.value === "soir") {
+        selectRegime.style.display = "block";
+    } else if(selectRepas.value === "ponctuel") {
+        selectRegime.style.display = "block";
+    } else {
+        selectRegime.style.display = "none";
+    }
+}
+document.getElementById("sectionRepas").addEventListener("change",regime);
+
+function restriction() {
+    const selectRestriction= document.getElementById("sectionRestriction");
+    const selectRegime = document.getElementById("sectionRegime");
+    
+    if(selectRegime.value === "vegan") {
+        selectRestriction.style.display = "block";
+    } else if(selectRegime.value === "vegetarien") {
+        selectRestriction.style.display = "block";
+    } else if(selectRegime.value === "non") {
+        selectRestriction.style.display = "block";
+    } else {
+        selectRestriction.style.display = "none";
+    }
+}
+document.getElementById("sectionRegime").addEventListener("change",restriction);
 //---------------------------------------------------
-//  on vient ecouter le clique du bouton du formulaire
+//  on vient ecouter le clique du bouton valider du formulaire
 //---------------------------------------------------
 
 document.getElementById("formulaire").addEventListener("submit",function(e){
@@ -391,8 +423,12 @@ let nbPersonnes = document.getElementById("nbPersonnes").value.trim();
 let arrivee = new Date(document.getElementById("dateArrivee").value);
 let depart = new Date(document.getElementById("dateDepart").value);
 let selectHotel = document.getElementById("selectHotel").value;
-/*const selectMenu = document.getElementById("sectionRegime").value;
-const petitDejeuner = document.getElementById("petitDejeuner").checked;*/
+let selectHotelFeu = document.getElementById("chambreFeu").value;
+/*const selectRepas = document.getElementById("sectionRepas").value;
+const selectMenu = document.getElementById("sectionRegime").value;
+const selectRestriction = document.getElementById("sectionRestriction").value;
+const petitDejeuner = document.getElementById("petitDejeuner").checked;
+const repas = document.getElementById("repas").checked;*/
 
 let erreur = [];
 
@@ -403,77 +439,84 @@ const numeroRegex = /^\d{1,5}$/;
 
 if (nomcomplet.length < 2 || nomcomplet.length >50){
     document.getElementById("erreurNom").textContent ="Veuillez saisir un Nom et un Prenom valide";
-    erreur.push("Veuillez saisir un Nom et un Prenom valide");
+    erreur.push("Veuillez saisir un Nom et un Prenom valide.");
 }else {
     document.getElementById("erreurNom").textContent ="";
 }
 
 if (!numeroRegex.test(numeroRue)){
     document.getElementById("erreurNumero").textContent ="Veuillez saisir un numero valide";
-    erreur.push("Veuillez saisir un numero valide");
+    erreur.push("Veuillez saisir un numero valide.");
 }else{
     document.getElementById("erreurNumero").textContent ="";
 }
 
 if (rue.length < 2 || rue.length >150){
     document.getElementById("erreurRue").textContent ="Veuillez saisir un nom de rue valide";
-    erreur.push("Veuillez saisir un nom de rue valide");
+    erreur.push("Veuillez saisir un nom de rue valide.");
 }else{
     document.getElementById("erreurRue").textContent ="";
 }
 
 if (!numeroRegex.test(codePostal)){
     document.getElementById("erreurPostal").textContent ="Veuillez saisir une adresse valide";
-    erreur.push("Veuillez saisir une adresse valide");
+    erreur.push("Veuillez saisir une adresse valide.");
 }else{
     document.getElementById("erreurPostal").textContent ="";
 }
 
 if (ville.length < 2 || ville.length >100){
     document.getElementById("erreurVille").textContent ="Veuillez saisir une adresse valide";
-    erreur.push("Veuillez saisir une adresse valide");
+    erreur.push("Veuillez saisir une adresse valide.");
 }else{
     document.getElementById("erreurVille").textContent ="";
 }
 
 if (!emailRegex.test(email)){
     document.getElementById("erreurEmail").textContent ="Format d'email invalide";
-    erreur.push("Format d'email invalide");
+    erreur.push("Format d'email invalide.");
 }else{
     document.getElementById("erreurEmail").textContent ="";
 } 
 
 if (!phoneRegex.test(telephone)){
     document.getElementById("erreurTel").textContent ="Format de telephone invalide";
-    erreur.push("Format de telephone invalide");
+    erreur.push("Format de telephone invalide.");
 }else{
     document.getElementById("erreurTel").textContent ="";
 } 
 
 if (!selectHotel){
     document.getElementById("erreurHotel").textContent ="Veuillez choisir un logement";
-    erreur.push("Veuillez choisir un logement");
+    erreur.push("Veuillez choisir un logement.");
 }else{
     document.getElementById("erreurHotel").textContent ="";
 } 
 
+if (!selectHotelFeu){
+    document.getElementById("erreurChambre").textContent ="Veuillez choisir une chambre";
+    erreur.push("Veuillez choisir une chambre.");
+}else{
+    document.getElementById("erreurChambre").textContent ="";
+} 
+
 if (nbPersonnes < 1 || nbPersonnes > 2 || nbPersonnes === ""){
     document.getElementById("erreurNombre").textContent ="Veuillez saisir un nombre 1 à 2 personnes maximum";
-    erreur.push("Veuillez saisir un nombre 1 à 2 personnes maximum");
+    erreur.push("Veuillez saisir un nombre 1 à 2 personnes maximum.");
 }else {
     document.getElementById("erreurNombre").textContent ="";
 } 
 
 if (isNaN(arrivee) || isNaN(depart)) {
     // Vérifier si les dates sont invalides
-    document.getElementById("erreurArrivee").textContent = "Veuillez choisir une date valide d'arrivée";
-    document.getElementById("erreurDepart").textContent = "Veuillez choisir une date valide de départ";
-    erreur.push("La date d'arrivée ne peut pas être après la date de départ");
+    document.getElementById("erreurArrivee").textContent = "Veuillez choisir une date valide d'arrivée.";
+    document.getElementById("erreurDepart").textContent = "Veuillez choisir une date valide de départ.";
+    erreur.push("La date d'arrivée ne peut pas être après la date de départ.");
 } else if (arrivee >= depart) {
     // Vérifier si la date d'arrivée est après la date de départ
-    document.getElementById("erreurArrivee").textContent = "La date d'arrivée ne peut pas être après la date de départ";
-    document.getElementById("erreurDepart").textContent = "La date d'arrivée ne peut pas être après la date de départ";
-    erreur.push("La date d'arrivée ne peut pas être après la date de départ");
+    document.getElementById("erreurArrivee").textContent = "La date d'arrivée ne peut pas être après la date de départ.";
+    document.getElementById("erreurDepart").textContent = "La date d'arrivée ne peut pas être après la date de départ.";
+    erreur.push("La date d'arrivée ne peut pas être après la date de départ.");
 } else {
     // Si tout est bon
     document.getElementById("erreurArrivee").textContent = "";
@@ -494,66 +537,76 @@ if (isNaN(arrivee) || isNaN(depart)) {
 }*/
 
      
-//
+//-------------------------------------------------------
 //  calcul de la reservation
-//
-
+//-------------------------------------------------------
+const chambreFeu = document.getElementById("chambreFeu").value;
 const unJour = 24 * 60 * 60 * 1000;
 const nuit = Math.round((depart-arrivee)/unJour);
 let total = 0;
 
 if(chambreFeu === "igloos") total += 500 * nuit;
-if(chambreFeu === "laponne") total += 250 * nuit;
+if(chambreFeu === "laponne") total += 850 * nuit;
 if(document.getElementById("chauffeur").checked) total += 11 * nuit;
 if(document.getElementById("petitDejeuner").checked) total += 15 *nbPersonnes * nuit;
-//if(document.getElementById("midi").checked) total += 25 * nbPersonnes;
-//if(document.getElementById("soir").checked) total += 25 * nbPersonnes;
+if(document.getElementById("repas").checked) total += 25 * nbPersonnes;
 if(document.getElementById("guide").checked) total += 20;
 
-//
-//      on affiche les erreur en 1er et si ok on affiche un resumer 
-//
+//-----------------------------------------------------------------------
+//on affiche les erreur en 1er et si ok on affiche un resumer 
+//---------------------------------------------------------------------
 
 let modalResumer = document.getElementById("modalResultat");
 let erreurForm = modalResumer.querySelector("#erreur");
 let resultatForm = modalResumer.querySelector("#resultat");
 
-
-console.log(modal);
-
+//console.log(modal);
 
 if (erreur.length > 0){
     erreurForm.innerHTML = "";
     resultatForm.innerHTML ="";
 }else {
     erreurForm.innerHTML ="";
-    let chauffeurText = document.getElementById("chauffeur").checked ? "Chauffeur : Oui" : "Chauffeur : Non";
+    let checkChauf = document.getElementById("chauffeur").checked ? " Oui" : " Non";
+    let checkGuide = document.getElementById("guide").checked ? " Oui" : " Non";
+    let checkDej = document.getElementById("petitDejeuner").checked ? " Oui" : " Non";
+    let checkRepas = document.getElementById("repas").checked ? " Oui" : " Non";
     resultatForm.innerHTML = `
     <strong>Formulaire valide</strong> <br>
             <strong>Nom :</strong> ${nomcomplet} <br>
-            <strong>Adresse :</strong> ${numeroRue} ${rue} <br>
-            <stong></strong>${codePostal}${ville}<br>
+            <strong>N° :</strong> ${numeroRue}<br>
+            <strong>Rue :</strong>${rue}<br>
+            <strong>Code postal:</strong>${codePostal}<br>
+            <strong>Ville:</strong>${ville}<br>
             <strong>Email :</strong> ${email} <br>
             <strong>Téléphone :</strong> ${telephone} <br>
             <strong>Nombre de personne :</strong> ${nbPersonnes} <br>
             <strong>Date d'arrivée :</strong> ${arrivee.toLocaleDateString()} <br>
             <strong>Date de départ :</strong> ${depart.toLocaleDateString()} <br>
-            <strong>Chauffeur :</strong> ${chauffeurText} <br>
+            <strong>Chauffeur :</strong> ${checkChauf} <br>
+            <strong>Guide :</strong> ${checkGuide} <br>
+            <strong>Dejeuner :</strong> ${checkDej} <br>
+            <strong>Repas :</strong> ${checkRepas} <br>
             <strong>Hotel :</strong> ${selectHotel} <br>
+            <strong>Chambre :</strong> ${selectHotelFeu} <br>
             <strong>Total :</strong> ${total} € <br>
             <button type="submit">Valider</button>
-            <button id="reset" type="reset">Reset</button>
+            <button id="reset" type="reset">Annuler</button>
     `;
     modalResumer.style.display = "flex";
+
 }
 
-
+//---------------------------------------------------------
+//pour reset le formulaire 
+//---------------------------------------------------------
 let resetButton = document.getElementById("reset");
 
 if (resetButton) {
     resetButton.addEventListener("click", function() {
         hotel();
-        //regime();
+        repas();
+        regime();
         document.getElementById("erreurNom").textContent = "";
         document.getElementById("erreurNumero").textContent = "";
         document.getElementById("erreurRue").textContent = "";
@@ -572,7 +625,5 @@ if (resetButton) {
 }
 
 })
-
-
 
 });

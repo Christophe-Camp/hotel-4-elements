@@ -2,42 +2,37 @@
     padding-top: 8.8rem;
 }
 
-.pres-offre h3  {
-    margin-left: 16.3rem;
+.title-offre {
+    margin: 0 16.5rem;
 }
+
 .container-offres {
     display: flex;
-    justify-content: space-between; /* Équilibre l'espace entre les colonnes */
-    align-items: stretch; /* Aligne les colonnes en hauteur */
-    gap: 2rem; /* Ajoute un espace entre les colonnes */
-    margin: 0 auto; /* Centre le container */
-    max-width: 1200px; /* Pour éviter qu'il soit trop large */
+    gap: 8.1rem;
+    justify-content: center;
+    margin: 3rem 0;
 }
 
-/* Chaque colonne prend le même espace */
-.col {
-    flex: 1; /* Permet aux colonnes de prendre la même largeur */
+.col-offre{
     display: flex;
-    flex-direction: column;
-    //align-items: center; /* Centre les éléments */
-    padding: 2rem;
+    flex-direction: column;   
+    width: 30%;
+    gap: 1rem;
 }
 
-/* Ajustement des images */
-.primary-img {
+img.primary-img {
     width: 100%;
     height: 432px;
-    object-fit: cover; /* Garde un bon cadrage */
+    margin-bottom: 3.8rem;
 }
 
-/* Services en mode grille pour une bonne lisibilité */
 .services {
-    display: grid;
+    display: grid;/* Services en mode grille pour une bonne lisibilité */
     grid-template-columns: repeat(2, 1fr); /* 2 colonnes */
-    gap: 3rem; /* Espacement entre les éléments */
+    gap: 1rem; 
     margin-top: 1rem;
-    align-items: center; /* Alignement vertical */
-    justify-content: center; /* Alignement horizontal */
+    align-items: center; 
+    justify-content: center; 
     .icon-service {
         display: flex;
         align-items: center;
@@ -49,6 +44,10 @@
     }
 }
 
+.prix {
+    margin: 3rem 0;
+    line-height: 3rem;
+}
 .btn-primary {
     margin-top: 1rem;
 }
@@ -57,17 +56,6 @@
     margin-left: 16.3rem;
 }
 
-
-/*.carousle-inner {
-    display: flex;
-    gap: 65px;
-}*/
-/*.slide img {
-    width: 488px;
-    height: 350px;
-    padding: 2rem;
-}
-*/
 /* Conteneur du carrousel */
 .carousel-container {
     width: calc(2.5 * 488px + 2 * 65px);  /* 2.5 images + marges entre images */
@@ -144,14 +132,14 @@
 }
 
 .testimonial-cards {
-    display: flex; /* Utilisation de flexbox */
-    justify-content: space-between; /* Espace entre les cartes */
-    gap: 20px; /* Espace entre les cartes */
+    display: flex; 
+    justify-content: space-between; 
+    gap: 1.25rem; 
 }
 
 .card {
     width: 48%; /* Chaque carte prendra environ la moitié de l'espace */
-    padding: 20px;
+    padding: 1.25rem;
 }
 .card-sup {
     display: flex;
@@ -160,19 +148,47 @@
 }
 .info {
     margin-left: 16.3rem;
+    padding-bottom: 8.4rem;
 }
-.col-info{
+.info-general{
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 80%;
+    gap: 4rem; 
+    padding: 2rem 0;
 }
 .horaire {
     display: flex;
 }
 .depart {
-    padding: 0 1rem;
+    padding-left: 1rem;
 }
 .arrivee{
-    padding: 0 1rem;
+    padding-right: 1rem;
+}
+.col-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+.icon-info{
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.col-info img {
+    width: 24px; /* ajuste à la taille de tes autres icônes */
+    height: auto;
+    flex-shrink: 0; /* empêche l'icône de rétrécir */
+}
+.info-line h5 {
+    margin: 0;
+}
+
+.info-line p {
+    margin: 0.5rem 0 0;
+}
+.info-contact h4{
+    padding: 2rem 0;
 }

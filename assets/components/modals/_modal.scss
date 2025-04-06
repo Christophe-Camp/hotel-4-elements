@@ -1,5 +1,6 @@
 @use"../../abstracts/colors" as*;
 /* Style de la modal */
+
 .modal {
     display: none;
     position: fixed;
@@ -19,7 +20,7 @@
     padding: 20px;
     border-radius: 10px;
     width: 400px;
-    text-align: center;
+    //text-align: center;
     position: relative;
 }
 
@@ -64,14 +65,6 @@
 #ville{
     width: 68%;
 }
-#dateDepart{
-    width: 232px;
-    padding: 0.5rem;
-    border-radius: 5px;
-    border: 1px solid ;
-    background-color:$color-input;
-}
-
 #chambreAir{
     display: none;
 }
@@ -82,6 +75,35 @@
     display: none;
 }
 #chambreTerre{
+    display: none;
+}
+#dateArrivee{
+    width: 232px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid ;
+    background-color:$color-input;
+}
+
+#dateDepart{
+    width: 232px;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid ;
+    background-color:$color-input;
+}
+
+.checkbox-wrapper {
+    display: flex;
+}
+
+#sectionRepas{
+    display: none;
+}
+#sectionRegime{
+    display: none;
+}
+#sectionRestriction{
     display: none;
 }
 
